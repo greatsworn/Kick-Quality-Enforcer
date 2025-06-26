@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Kick Quality Enforcer"
+  },
+  "description": {
+    "message": "Kick.com'da tercih ettiğiniz yayın kalitesini otomatik olarak ayarlar."
+  },
+  "defaultQuality": {
+    "message": "Varsayılan Kalite"
+  },
+  "select": {
+    "message": "Seçiniz"
+  }
+}

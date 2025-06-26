@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Kick Quality Enforcer"
+  },
+  "description": {
+    "message": "Automatically sets your preferred stream quality on Kick.com."
+  },
+  "defaultQuality": {
+    "message": "Default Quality"
+  },
+  "select": {
+    "message": "Select"
+  }
+}

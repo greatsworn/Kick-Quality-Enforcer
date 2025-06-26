@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kick Quality</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #18181b;
+      color: #fff;
+      width: 220px;
+      min-height: 140px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      padding: 16px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h3 {
+      margin: 0 0 12px 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      color: #22d3ee;
+      text-shadow: 0 1px 4px #0006;
+    }
+    select {
+      width: 100%;
+      padding: 8px 6px;
+      border-radius: 6px;
+      border: none;
+      background: #23232b;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      outline: none;
+      box-shadow: 0 1px 4px #0002;
+      transition: border 0.2s;
+    }
+    select:focus {
+      border: 2px solid #22d3ee;
+    }
+    .footer {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 10px;
+      text-align: center;
+      opacity: 0.8;
+    }
+    .icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #0003;
+      background: #fff;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="icons/icon48.png" alt="Kick Quality Icon" class="icon" />
+    <h3><span class="i18n" data-i18n="defaultQuality"></span></h3>
+    <select id="qualitySelect">
+      <option value="" disabled class="i18n" data-i18n="select"></option>
+      <option value="1080">1080p</option>
+      <option value="720">720p</option>
+      <option value="480">480p</option>
+      <option value="360">360p</option>
+    </select>
+    <div class="footer">Kick Quality Enforcer</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
