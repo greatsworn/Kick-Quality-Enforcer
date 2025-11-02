@@ -10,7 +10,7 @@
       background: #18181b;
       color: #fff;
       width: 220px;
-      min-height: 140px;
+      min-height: 180px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -29,24 +29,80 @@
       margin: 0 0 12px 0;
       font-size: 1.1rem;
       letter-spacing: 0.5px;
-      color: #22d3ee;
+      color: #53fc18;
       text-shadow: 0 1px 4px #0006;
     }
-    select {
+    .quality-options {
       width: 100%;
-      padding: 8px 6px;
-      border-radius: 6px;
-      border: none;
-      background: #23232b;
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 8px;
-      outline: none;
-      box-shadow: 0 1px 4px #0002;
-      transition: border 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
     }
-    select:focus {
-      border: 2px solid #22d3ee;
+    .quality-option {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      padding: 5px 8px;
+      border-radius: 4px;
+      background: #23232b;
+      transition: all 0.2s ease;
+      min-height: 26px;
+    }
+    .quality-option:hover {
+      background: #2a2a33;
+    }
+    .quality-option input[type="radio"] {
+      display: none;
+    }
+    .quality-option .radio-dot {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid #444;
+      border-radius: 50%;
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      top: 0;
+    }
+    .quality-option .radio-dot::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #53fc18;
+      transform: scale(0);
+      transition: transform 0.15s ease;
+    }
+    .quality-option input[type="radio"]:checked + .radio-dot {
+      border-color: #53fc18;
+    }
+    .quality-option input[type="radio"]:checked + .radio-dot::after {
+      transform: scale(1);
+    }
+    .quality-option label {
+      color: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0 8px 0 28px;
+      line-height: 26px;
+    }
+    /* Seçili durum için ek stil */
+    .quality-option input[type="radio"]:checked ~ label {
+      color: #53fc18;
     }
     .footer {
       font-size: 0.8rem;
@@ -70,13 +126,28 @@
   <div class="container">
     <img src="icons/icon48.png" alt="Kick Quality Icon" class="icon" />
     <h3><span class="i18n" data-i18n="defaultQuality"></span></h3>
-    <select id="qualitySelect">
-      <option value="" disabled class="i18n" data-i18n="select"></option>
-      <option value="1080">1080p</option>
-      <option value="720">720p</option>
-      <option value="480">480p</option>
-      <option value="360">360p</option>
-    </select>
+    <div class="quality-options" id="qualitySelect">
+      <div class="quality-option">
+        <input type="radio" id="quality1080" name="quality" value="1080">
+        <div class="radio-dot"></div>
+        <label for="quality1080">1080p</label>
+      </div>
+      <div class="quality-option">
+        <input type="radio" id="quality720" name="quality" value="720">
+        <div class="radio-dot"></div>
+        <label for="quality720">720p</label>
+      </div>
+      <div class="quality-option">
+        <input type="radio" id="quality480" name="quality" value="480">
+        <div class="radio-dot"></div>
+        <label for="quality480">480p</label>
+      </div>
+      <div class="quality-option">
+        <input type="radio" id="quality360" name="quality" value="360">
+        <div class="radio-dot"></div>
+        <label for="quality360">360p</label>
+      </div>
+    </div>
     <div class="footer">Kick Quality Enforcer</div>
   </div>
   <script src="popup.js"></script>
